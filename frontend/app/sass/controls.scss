@@ -1,0 +1,24 @@
+$progress_bar: #b3c5ff;
+
+.controllers{
+  .hidden{
+    display: none;
+  }
+
+  .progress-bar{
+    width: 70%;
+    height: 10px;
+    display: inline-block;
+    background-color: $progress_bar;
+
+    .volume{
+      height: 10px;
+      width: 0;
+      background-color: $progress_bar - 50;
+    }
+  }
+
+  .time{
+    display: inline-block;
+  }
+}

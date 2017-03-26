@@ -1,0 +1,63 @@
+$gray: #333;
+$blue: #405069;
+$white: #fff;
+$orange: #fc503e;
+
+body {font: 400 1.2em/1.4 'PT Sans', sans-serif; color: $gray; background-color: $blue;}
+.wrapper {max-width: 1200px; width: 95%; margin: 0 auto;}
+.hide {display: none;}
+.center {text-align: center;}
+
+input, textarea {height: 40px; border:none; background-color: $white;}
+textarea {height: 100px; resize: none; padding: 20px 0 0 20px;}
+input:not([type="submit"]) {padding-left: 20px;}
+input[type="submit"] {@extend .transition; cursor: pointer; font-size: .9em; text-transform: uppercase; padding: 0;}
+
+::-webkit-input-placeholder { color: #7e7e7e; }
+:-moz-placeholder           { color: #7e7e7e; } /* Firefox 18- (one color)*/
+::-moz-placeholder          { color: #7e7e7e; } /* Firefox 19+ (double colons) */
+:-ms-input-placeholder      { color: #7e7e7e; }
+
+:focus::-webkit-input-placeholder { color: transparent; }
+:focus:-moz-placeholder           { color: transparent; } /* Firefox 18- (one color)*/
+:focus::-moz-placeholder          { color: transparent; } /* Firefox 19+ (double colons) */
+:focus:-ms-input-placeholder      { color: transparent; }
+
+@mixin flex_box($wrap, $justify-content, $align-content, $align-items) {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: $wrap;
+    justify-content: $justify-content;
+    align-content: $align-content;
+    align-items: $align-items;}
+.transition {
+    -webkit-transition: all .3s ease-in;
+    -moz-transition: all .3s ease-in;
+    -ms-transition: all .3s ease-in;
+    -o-transition: all .3s ease-in;
+    transition: all .3s ease-in;}
+ul {padding: 0; margin: 0; list-style: none;}
+a {display: inline-block; color: $white; @extend .transition; text-decoration: none; cursor: pointer;}
+a:hover {color: $orange;}
+input:focus, textarea:focus {outline: none;}
+
+#search_form { @include flex_box(wrap, space-between, stretch, stretch);
+    input[type="text"] { width: 74%;}
+    input[type="submit"] { width: 25%; background-color: $orange; color: $white;}
+    input[type="submit"]:hover {background-color: $white; color: $gray;}
+}
+
+#genre-list { @include flex_box(wrap, flex-start, stretch, stretch);
+    li {width: 25%; @extend .center;}
+    li a {display: block; padding: 10px;}
+    li:nth-child(2n) a {background-color: $white; color:$gray;}
+    li:nth-child(2n) a:hover {background-color: $gray; color:$white;}
+    li:nth-child(2n+1) a {background-color: $gray; color:$white;}
+    li:nth-child(2n+1) a:hover {background-color: $white; color:$gray;}
+}
+
+@media only screen and (max-width:768px){
+    #genre-list {
+        li {width: 50%;}
+    }
+}

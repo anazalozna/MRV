@@ -1,0 +1,13 @@
+@import 'base';
+#movie-list { @include flex_box(wrap, space-between, stretch, stretch); margin: 20px 0;
+  li {width: 49%; @extend .center; cursor: pointer;
+    img {width: 100%;}
+    h4 {color: $white;}
+  }
+}
+
+@media only screen and (max-width:768px){
+  #movie-list {
+    li {width: 100%;}
+  }
+}

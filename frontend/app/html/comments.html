@@ -1,0 +1,16 @@
+<form class="add-comment">
+    <ul class="errors">
+    </ul>
+    <h3>Leave your comment:</h3>
+    <input name="name" type="text" placeholder="Name" required>
+    <textarea name="message" placeholder="Message"></textarea>
+    <input type="submit">
+</form>
+<ul class="comments_block">
+    {{#comments}}
+    <li>
+        <h4>{{name}} ({{date}})</h4>
+        <div>{{message}}</div>
+    </li>
+    {{/comments}}
+</ul>

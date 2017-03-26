@@ -1,0 +1,22 @@
+<div class="popup_content">
+    <a class="close" href="#"><i class="fa fa-times"></i></a>
+    <h2>{{title}}</h2>
+    <div class="video">
+        <video controls>
+            <source src="/{{link}}" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="controllers">
+            <i class="fa fa-play"></i>
+            <i class="fa fa-pause hidden"></i>
+            <i class="fa fa-volume-off hidden"></i>
+            <i class="fa fa-volume-up"></i>
+            <div class="progress-bar">
+                <div class="volume"></div>
+            </div>
+            <div class="time"></div>
+            <i class="fa fa-arrows-alt"></i>
+        </div>
+    </div>
+    <p>{{description}}</p>
+</div>

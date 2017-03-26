@@ -1,0 +1,39 @@
+@import 'base';
+$dark_blue: #020f17;
+
+.popup_box {background: rgba(0,0,0,.8); width: 100%; height: 100%; position: fixed; z-index: 99; top: 0; left: 50%; transform: translate(-50%,0%);
+  .popup_content {
+    overflow: auto; position: absolute; z-index: 999; left: 50%; top: 3%; transform: translate(-50%,0%); padding: 25px;
+    background: #e8e8e8; box-sizing: border-box; border-radius: 5px; height: 100%;
+
+    .fa.fa-times {position: absolute; color: $dark_blue; cursor: pointer; @extend .transition; top: 0; right: 0; font-size: 2.3em;
+      padding: 10px 20px; text-align: right;}
+
+    .fa.fa-times:hover {color: $orange;}
+
+    .video video {width: 715px;}
+  }
+}
+
+.controllers { @include flex_box(nowrap, space-between, stretch, center); margin-top: 20px;
+  i {cursor: pointer;}
+}
+
+.add-comment {
+  input, textarea {width: 100%; background-color: $gray; color:$white; font-size: 1em;}
+  textarea {margin: 10px 0;}
+  input[type="submit"] {background-color: $orange; width:200px;}
+  input[type="submit"]:hover {background-color: $gray;}
+}
+
+.comments_block { margin: 40px 0; border-top: 2px dashed #ccc;
+  h4 {margin-bottom: 10px;}
+}
+
+@media only screen and (max-width:768px){
+  .popup_box .popup_content .video video {width: 500px;}
+}
+
+@media only screen and (max-width:550px){
+  .popup_box .popup_content .video video {width: 270px;}
+}

@@ -1,0 +1,10 @@
+<div class="wrapper">
+    <ul id="movie-list">
+        {{#movies}}
+        <li id="{{id}}">
+            <div><img src="/{{thumb}}"></div>
+            <h4>{{title}} ({{year}})</h4>
+        </li>
+        {{/movies}}
+    </ul>
+</div>
